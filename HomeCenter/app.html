@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f7ff">
+  <meta name="description" content="A calm, organized home for your everyday apps.">
+  <title>HomeCenter — Your space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <script>try { if (localStorage.getItem("homecenter.theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch {}</script>
+  <link rel="stylesheet" href="config.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div><div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="star-field" aria-hidden="true"><span class="star-sparkle sparkle-a">✦</span><span class="star-sparkle sparkle-b">✧</span><span class="star-sparkle sparkle-c">✦</span><span class="star-sparkle sparkle-d">✧</span><span class="star-sparkle sparkle-e">✦</span></div>
+  <div class="page-shell">
+    <header class="topbar glass-panel">
+      <a class="brand" href="#home" aria-label="HomeCenter home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>home<span class="brand-light">center</span></span></a>
+      <nav class="top-nav" aria-label="Main navigation"><a class="nav-link active" id="home-nav" href="#home" aria-current="page">Home</a><a class="nav-link" id="apps-nav" href="#your-apps">Your apps</a></nav>
+      <div class="top-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false"><svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.2 15.4A8.6 8.6 0 0 1 8.6 3.8 8.7 8.7 0 1 0 20.2 15.4Z"/></svg><svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg><span>Theme</span></button>
+        <div class="profile" id="profile-area"><button class="profile-button" id="profile-button" type="button"><span class="profile-avatar" id="profile-avatar">?</span><span class="profile-name" id="profile-name">Log in</span><svg class="chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></button></div>
+      </div>
+    </header>
+
+    <dialog class="auth-dialog" id="auth-dialog" aria-labelledby="auth-title"><form class="auth-form" id="auth-form"><button class="dialog-close" id="auth-close" type="button" aria-label="Close sign in">×</button><span class="auth-brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><p class="eyebrow muted">WELCOME TO HOMECENTER</p><h2 id="auth-title">Sign in</h2><p class="auth-intro" id="auth-intro">Log in to pick up where you left off.</p><label class="auth-label" for="auth-email">Email</label><input class="auth-input" id="auth-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required><label class="auth-label" for="auth-password">Password</label><input class="auth-input" id="auth-password" name="password" type="password" autocomplete="current-password" placeholder="Your password" required minlength="4"><button class="auth-submit" type="submit" id="auth-submit">Log in</button><label class="remember-row" for="remember-me"><input id="remember-me" name="remember" type="checkbox"><span>Remember me on this device</span></label><p class="auth-message" id="auth-message" role="status"></p><p class="auth-switch"><span id="auth-switch-copy">New to HomeCenter?</span> <button type="button" id="auth-switch">Create an account</button></p><p class="auth-disclaimer">This demo saves a profile in this browser only. It does not verify accounts or sync between devices.</p></form></dialog>
+
+    <main id="home">
+      <section class="welcome" aria-labelledby="welcome-title"><div class="welcome-copy"><p class="eyebrow"><span class="status-dot"></span> YOUR PERSONAL DASHBOARD</p><h1 id="welcome-title">A little more <span>you.</span></h1><p class="intro">Everything you need, in one comfortable place.</p></div><div class="date-card glass-panel"><span class="date-icon" aria-hidden="true">✳</span><span><strong>Your day, your way</strong><small>A fresh start begins here.</small></span></div></section>
+
+      <section class="apps-section" id="your-apps" aria-labelledby="apps-heading"><div class="section-heading"><div><p class="eyebrow muted">A SPACE FOR EVERYTHING</p><h2 id="apps-heading">Your apps</h2></div><span class="app-count" id="app-count">05 apps</span></div>
+        <details class="add-app-panel glass-panel"><summary><span class="add-app-plus" aria-hidden="true">+</span><span>Add an app</span><span class="add-app-caption">Make this space your own</span></summary><form id="add-app-form" class="add-app-form"><label>App name<input name="name" required maxlength="40" placeholder="e.g. Spotify"></label><label>Website URL<input name="webUrl" type="url" required placeholder="https://example.com"></label><label>App link <span class="optional-label">optional</span><input name="appUrl" placeholder="e.g. spotify://" autocapitalize="off" spellcheck="false"></label><label>Logo image URL <span class="optional-label">optional</span><input name="logo" type="url" placeholder="https://example.com/logo.png"></label><p class="form-hint">Add a logo image URL, or leave it blank to use the website favicon. App links are tried first, then the website opens.</p><div class="form-actions"><button class="save-app-button" type="submit">Add to HomeCenter</button><span id="form-message" role="status"></span></div></form></details>
+        <div class="app-grid" id="app-grid" aria-live="polite"></div><p class="apps-note" id="apps-note" role="status">Loading your apps...</p>
+      </section>
+
+      <section class="assistant-section glass-panel" id="assistant" aria-labelledby="assistant-heading"><div class="assistant-heading"><div class="assistant-brand"><span class="assistant-avatar" aria-hidden="true"><svg viewBox="0 0 32 32"><rect x="3" y="4" width="26" height="20" rx="8" fill="currentColor"/><path d="M10 23l-1 5 6-4" fill="currentColor"/><circle cx="10" cy="14" r="1.5" fill="white"/><circle cx="16" cy="14" r="1.5" fill="white"/><circle cx="22" cy="14" r="1.5" fill="white"/></svg></span><span><h2 id="assistant-heading">Milo, your AI friend</h2><p>A friendly space to talk, explore ideas, and work through problems.</p></span></div><span class="preview-badge" id="assistant-status" data-state="offline" role="status"><span></span> CHECKING</span></div>
+        <div class="assistant-chat"><div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-label="Conversation with Milo"><div class="chat-message assistant-message"><span class="message-avatar">M</span><p>Hey, I'm Milo. What's on your mind? We can explore an idea, untangle a problem, or just talk for a bit.</p></div></div><div class="chat-suggestions" aria-label="Try asking Milo"><button type="button" data-prompt="I have a problem and don't know where to start.">Help me get unstuck</button><button type="button" data-prompt="I want to explore a new idea.">Explore an idea</button><button type="button" data-prompt="Can you help me troubleshoot something?">Fix a problem</button></div><form class="chat-composer" id="chat-form"><label class="visually-hidden" for="chat-input">Message Milo</label><textarea id="chat-input" name="message" rows="1" maxlength="1000" placeholder="Tell Milo what's on your mind..." required></textarea><button type="submit" aria-label="Send message"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-5 16-3-7-8-1Z"/><path d="m12 13 8-9"/></svg></button></form><p class="chat-note">Milo sends messages to the OpenAI API to generate replies. HomeCenter keeps this conversation only while this page is open.</p></div>
+      </section>
+      <footer class="footer"><span>Made for your everyday.</span><span class="footer-mark" aria-hidden="true">✳</span></footer>
+    </main>
+  </div>
+  <script src="apps.js" defer></script><script src="auth.js" defer></script><script src="theme.js" defer></script><script src="navigation.js" defer></script><script src="assistant.js" defer></script>
+</body>
+</html>

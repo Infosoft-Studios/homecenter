@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Milo AI Friend",
+    "description": "Talk things through, explore ideas, and get unstuck.",
+    "initial": "M",
+    "style": "assistant",
+    "type": "internal",
+    "appUrl": null,
+    "webUrl": "#assistant"
+  },
+  {
+    "name": "ChatGPT",
+    "description": "A little help with anything.",
+    "initial": "C",
+    "style": "chatgpt",
+    "logo": "https://cdn.simpleicons.org/openai",
+    "appUrl": "chatgpt://",
+    "webUrl": "https://chatgpt.com/"
+  },
+  {
+    "name": "Zonoff",
+    "description": "Open Zonoff on the web.",
+    "initial": "Z",
+    "style": "zonoff",
+    "logo": "https://www.zonoff.com/favicon.ico",
+    "appUrl": null,
+    "webUrl": "https://www.zonoff.com/"
+  },
+  {
+    "name": "Instagram",
+    "description": "Your people and moments.",
+    "initial": "I",
+    "style": "instagram",
+    "logo": "https://cdn.simpleicons.org/instagram",
+    "appUrl": "instagram://app",
+    "webUrl": "https://www.instagram.com/"
+  },
+  {
+    "name": "YouTube",
+    "description": "Find something worth watching.",
+    "initial": "Y",
+    "style": "youtube",
+    "logo": "https://cdn.simpleicons.org/youtube/FF0000",
+    "appUrl": "youtube://",
+    "webUrl": "https://www.youtube.com/"
+  }
+]
